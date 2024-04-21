@@ -6,8 +6,10 @@ import email from '../assets/email.svg'
 import fb from '../assets/facebook.svg'
 import insta from '../assets/insta.svg'
 import twitter from '../assets/twitter.svg'
+import useFetch from '../hooks/useFetch'
 
 const Footer = () => {
+    const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`)
   return (
     <div className='w-full flex flex-col items-center bg-black text-white mt-8 md:mt-12 py-12 pb-24 md:py-16 md:pb-16'>
         <div className='relative w-[90%] grid md:grid-cols-3 grid-cols-1 gap-6 md:gap-12'>
@@ -29,11 +31,11 @@ const Footer = () => {
                 <div className='md:w-[60%] flex flex-col items-left gap-4'>
                     <div className='flex items-center gap-3'>
                         <img src={phone} alt="" />
-                        <p>3808120281028</p>
+                        <p>{data.hotel?.contacts[0]}</p>
                     </div>
                     <div className='flex items-center gap-3'>
                         <img src={email} alt="" />
-                        <p>lakeparadise.al@gmail.com</p>
+                        <p>{data.hotel?.contacts[1]}</p>
                     </div>
                     <div className='flex items-right items-center gap-4 mt-4 md:mt-16'>
                         <p className='text-[13px] text-[#B3B3B3]'>Follow Us</p>

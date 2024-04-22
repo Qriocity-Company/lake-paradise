@@ -1,7 +1,8 @@
 import React from 'react'
 import img from '../assets/about-img.png'
+import useFetch from '../hooks/useFetch';
 const About = () => {
-
+  const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
   const content = [
     "to our charming lake house nestled on the picturesque shores of Lake Wedowee. Immerse yourself in the serenity of nature as you relax and rejuvenate in this cozy retreat.",
     "This fully equipped home boasts 2 bedrooms and 2.5 bathrooms, comfortably accommodating 8 guests. Step inside to discover a warm and inviting living area with ample seating, a cozy fireplace, and breathtaking lake views.",
@@ -15,7 +16,7 @@ const About = () => {
     <div className='flex flex-col w-full items-center md:my-12'>
         <div className='w-[95%] md:w-[90%] block gap-8 md:flex md:gap-16'>
             <div className='md:w-[60%] w-full md:order-2 order-1'>
-                <img src={img} alt="Front View of Lake House" className='h-full w-full'/>
+                <img src={data.hotel?.aboutImage} alt="Front View of Lake House" className='h-full w-full'/>
             </div>
             <div className='mt-8 md:mt-0 md:w-[40%] w-full md:order-1 order-2 font-archivo'>
                 <h1 className='text-[50px] md:text-[80px] font-bold font-bartleen'>Welcome</h1>

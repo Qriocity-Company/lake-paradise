@@ -12,6 +12,7 @@ import Location from './components/Location'
 import Footer from './components/Footer'
 import BottomBanner from './components/BottomBanner'
 import Features from './components/Features'
+import BookingSection from './components/BookingSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +22,7 @@ function App() {
       <Navbar/>
       <TopBanner/>
       <HeroSection/>
-      {/* Booking Section to be added */}
+      <BookingSection/>
       <About/>
       <Amenities/>
       <RoomImages/>

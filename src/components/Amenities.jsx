@@ -43,7 +43,7 @@ const Amenities = () => {
   ]
 
   return (
-    <div className='flex flex-col w-full items-center my-8 md:my-12'>
+    <div id='amneties' className='flex flex-col w-full items-center my-8 md:my-12'>
         <div className='w-[95%] md:w-[90%] flex flex-col'>
             <h1 className='text-[30px] md:text-[42px] font-arhivo font-bold'>Amenities</h1>
             <div className='grid grid-cols-2 md:grid-cols-4 mt-6 md:gap-8 gap-4'>

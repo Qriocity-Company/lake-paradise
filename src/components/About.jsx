@@ -1,6 +1,7 @@
 import React from 'react'
 import img from '../assets/about-img.png'
 import useFetch from '../hooks/useFetch';
+
 const About = () => {
   const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
   const content = [
@@ -13,7 +14,7 @@ const About = () => {
   ];
     
   return (
-    <div className='flex flex-col w-full items-center md:my-12'>
+    <div id='about'  className='flex flex-col w-full items-center md:my-12'>
         <div className='w-[95%] md:w-[90%] block gap-8 md:flex md:gap-16'>
             <div className='md:w-[60%] w-full md:order-2 order-1'>
                 <img src={data.hotel?.aboutImage} alt="Front View of Lake House" className='h-full w-full'/>

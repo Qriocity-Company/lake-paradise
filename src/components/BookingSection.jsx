@@ -7,6 +7,7 @@ import child from '../assets/child.svg'
 const BookingSection = () => {
 
   const host = 'https://lake-paradise-admin.onrender.com';
+  // const host = 'http://localhost:3001';
 
   const [formData, setFormData] = useState({
     date: '',
@@ -58,7 +59,7 @@ const BookingSection = () => {
   };
 
   return (
-    <div className='w-full flex flex-col items-center mb-8 md:mb-12'>
+    <div id='book' className='w-full flex flex-col items-center mb-8 md:mb-12'>
       <div className='w-[95%] md:w-[90%] flex flex-col bg-[#E9F3F6] rounded-3xl  p-4 md:p-8 shadow-md'>
 
         <div className='flex flex-col font-archivo text-center'>

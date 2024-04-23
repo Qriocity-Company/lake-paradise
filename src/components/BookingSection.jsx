@@ -75,18 +75,7 @@ const BookingSection = () => {
             </div>
             <div className='w-full md:w-[40%] mt-6 md:mt-0 flex flex-col justify-around gap-4 md:gap-0'>
 
-              <div className='w-full flex flex-col gap-2'>
-                <label htmlFor="date" className='w-full font-semibold text-lg'>Date *</label>
-                <input
-                  type="date"
-                  id="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
-                  required
-                />
-              </div>
+           
 
               <div className='w-full flex flex-col gap-2'>
                 <label htmlFor="checkinDate" className='w-full font-semibold text-lg'>Check-in Date *</label>
@@ -112,6 +101,22 @@ const BookingSection = () => {
                   className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
                   required
                 />
+              </div>
+
+              <div className='w-full flex flex-col gap-2'>
+              <label htmlFor="adults"  className='w-full font-semibold text-lg'>Adults</label>
+              <select
+                id="adults"
+                name="adults"
+                value={formData.adults}
+                onChange={handleChange}
+                className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
+                required
+              >
+                {[...Array(7)].map((_, index) => (
+                  <option key={index + 1} value={index + 1}>{index + 1}</option>
+                ))}
+              </select>
               </div>
 
             </div>
@@ -146,53 +151,29 @@ const BookingSection = () => {
               />
             </div>
 
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-1 md:gap-2'>
 
-              <label htmlFor="Person" className='w-full font-semibold text-lg'>Person</label>
+              <label htmlFor="Person" className='w-full font-semibold text-lg'>Children</label>
 
-              <div className='flex items-center w-full bg-white rounded-xl p-2 py-4 font-semibold text-lg gap-4 md:gap-8'>
-                <div className='w-1/2 flex items-center gap-2 justify-around'>
-                  <img src={person} alt="" className='h-6 w-6'/>
-                  <label htmlFor="adults" className='font-semibold text-lg'>Adults</label>
-                  <select
-                    id="adults"
-                    name="adults"
-                    value={formData.adults}
-                    onChange={handleChange}
-                    className='w-12'
-                    required
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                   
-                  </select>
-                </div>
-                <div className='w-1/2 flex items-center gap-2 justify-around'>
-                  <img src={child} alt="" className='h-6 w-6'/>
-                  <label htmlFor="children" className='font-semibold text-lg'>Children</label>
-                  <select
-                    id="children"
-                    name="children"
-                    value={formData.children}
-                    onChange={handleChange}
-                    className='w-12'
-                    required
-                  >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                  </select>
-                </div>
-              </div>
+              
+
+               
+    
+    
+                    <select
+                      id="children"
+                      name="children"
+                      value={formData.children}
+                      onChange={handleChange}
+                      className=' bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
+                      required
+                    >
+                      {[...Array(7)].map((_, index) => (
+                        <option key={index + 1} value={index + 1}>{index + 1}</option>
+                      ))}
+                    </select>
+                  
+
             </div>
             
 

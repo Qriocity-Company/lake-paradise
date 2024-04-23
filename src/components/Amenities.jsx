@@ -11,7 +11,7 @@ const Amenity=({title,content,img})=>{
             <div className='hover:-translate-y-[6px] transition-all'>
                 <img src={img} alt={title} className='h-full w-full'/>
             </div>
-            <h3 className='w-full text-center font-bold text-[16px] md:text-[20px] '>{title}</h3>
+            <h3 className='w-full text-center text-wrap font-bold text-[14px] md:text-[16px] '>{title}</h3>
             <p className='text-center text-[12px] md:text-[16px] md:mt-1'>{content}</p>
         </div>
     )

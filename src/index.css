@@ -14,3 +14,19 @@ body{
     overflow-x: hidden;
     background-color: #F8FFFF;
 }
+
+/* Add this CSS to your global styles or component CSS */
+.slick-prev,
+.slick-next {
+  /* color: blue; Change the arrow color to blue */
+}
+
+.slick-arrow{
+  color: rgb(69, 101, 225);;
+  /* background-color: rgb(69, 101, 225); */
+  border-radius: 100%; /* Change the arrow color to blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

@@ -17,7 +17,8 @@ const BookingSection = () => {
     phoneNumber: '',
     adults: '1',
     children: '0',
-    message: ''
+    message: '',
+    email:''
   });
 
   const handleChange = (e) => {
@@ -53,7 +54,8 @@ const BookingSection = () => {
       phoneNumber: '',
       adults: '1',
       children: '0',
-      message: ''
+      message: '',
+      email:''
     });
 
   };
@@ -69,13 +71,11 @@ const BookingSection = () => {
 
         <form className='flex flex-col w-full' onSubmit={handleSubmit}>
 
-          <div className='block md:flex md:gap-16 mt-8'>
+          <div className='block md:flex md:gap-8 lg:gap-16 mt-8'>
             <div className='w-full md:w-[60%]'>
               <CalendarUI />
             </div>
-            <div className='w-full md:w-[40%] mt-6 md:mt-0 flex flex-col justify-around gap-4 md:gap-0'>
-
-           
+            <div className='w-full md:w-[40%] mt-6 md:mt-0 flex flex-col justify-between gap-4 md:gap-0'>
 
               <div className='w-full flex flex-col gap-2'>
                 <label htmlFor="checkinDate" className='w-full font-semibold text-lg'>Check-in Date *</label>
@@ -104,20 +104,33 @@ const BookingSection = () => {
               </div>
 
               <div className='w-full flex flex-col gap-2'>
-              <label htmlFor="adults"  className='w-full font-semibold text-lg'>Adults</label>
-              <select
-                id="adults"
-                name="adults"
-                value={formData.adults}
-                onChange={handleChange}
-                className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
-                required
-              >
-                {[...Array(7)].map((_, index) => (
-                  <option key={index + 1} value={index + 1}>{index + 1}</option>
-                ))}
-              </select>
+                <label htmlFor="checkoutDate" className='w-full font-semibold text-lg'>Your Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
+                  required
+                  placeholder='eg@gmail.com'
+                />
               </div>
+
+              <div className='w-full flex flex-col gap-2'>
+                <label htmlFor="phoneNumber" className='w-full font-semibold text-lg'>Phone Number *</label>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  placeholder='Enter Phone No.'
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
+                  required
+                />
+              </div>
+              
 
             </div>
           </div>
@@ -136,20 +149,23 @@ const BookingSection = () => {
               />
                
             </div>
+            <div className='w-full flex flex-col gap-2'>
+                <label htmlFor="adults"  className='w-full font-semibold text-lg'>Adults</label>
+                <select
+                  id="adults"
+                  name="adults"
+                  value={formData.adults}
+                  onChange={handleChange}
+                  className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
+                  required
+                >
+                  {[...Array(7)].map((_, index) => (
+                    <option key={index + 1} value={index + 1}>{index + 1}</option>
+                  ))}
+                </select>
+              </div>
 
-            <div className='flex flex-col gap-2'>
-              <label htmlFor="phoneNumber" className='w-full font-semibold text-lg'>Phone Number *</label>
-              <input
-                type="text"
-                id="phoneNumber"
-                name="phoneNumber"
-                placeholder='Enter Phone No.'
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
-                required
-              />
-            </div>
+            
 
             <div className='flex flex-col gap-1 md:gap-2'>
 

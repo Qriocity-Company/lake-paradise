@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 import BottomBanner from './components/BottomBanner'
 import Features from './components/Features'
 import BookingSection from './components/BookingSection'
+import ImageCarousel from './components/ImageCarousel'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,10 +23,11 @@ function App() {
       <Navbar/>
       <TopBanner/>
       <HeroSection/>
-      <BookingSection/>
       <About/>
       <Amenities/>
-      <RoomImages/>
+      {/* <RoomImages/> */}
+      <ImageCarousel/>
+      <BookingSection/>
       <Location/>
       <BottomBanner/>
       <Features/>

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-const userId = import.meta.env.VITE_USER_ID;
+const userId = process.env.VITE_USER_ID;
 
 const Features = () => {
 
@@ -14,7 +14,8 @@ const Features = () => {
     console.log(userId)
     const res = await fetch(`${host}/hotel/get-hotel-features`,{
         body:JSON.stringify({
-            userId,hotelId
+            userId:userId | "662215882d2d208c754b0dbd",
+            hotelId
         }),
         headers:{
             'Content-Type':'application/json'

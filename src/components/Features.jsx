@@ -14,7 +14,7 @@ const Features = () => {
     console.log(userId)
     const res = await fetch(`${host}/hotel/get-hotel-features`,{
         body:JSON.stringify({
-            userId:userId | "662215882d2d208c754b0dbd",
+            userId:"662215882d2d208c754b0dbd",
             hotelId
         }),
         headers:{

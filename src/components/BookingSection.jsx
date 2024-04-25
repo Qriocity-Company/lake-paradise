@@ -31,6 +31,30 @@ const BookingSection = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+    const today = new Date();
+    const checkinDate = new Date(formData.checkinDate);
+    const checkoutDate = new Date(formData.checkoutDate);
+    const phoneNumberPattern = /^\d{10}$/;
+
+    if (!formData.checkinDate || !formData.checkoutDate) {
+      alert('Please select check-in and check-out dates.');
+      return;
+    }
+
+    if (checkinDate < today) {
+      alert('Check-in date should be today or later.');
+      return;
+    }
+
+    if (checkoutDate <= checkinDate) {
+      alert('Checkout date should be after check-in date.');
+      return;
+    }
+
+    if (!phoneNumberPattern.test(formData.phoneNumber)) {
+      alert('Phone number should be a 10-digit number.');
+      return;
+    }
     console.log('Form submitted:', formData);
     
     const res = await fetch(`${host}/messages/send-message`,{

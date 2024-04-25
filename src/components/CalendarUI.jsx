@@ -34,31 +34,35 @@ const CalendarUI = () => {
     const firstDay = getFirstDayOfMonth();
     const totalDays = getDaysInMonth(date.getMonth(), date.getFullYear());
     const days = [];
-
+  
     // Add empty placeholders for days before the first day of the month
     for (let i = 0; i < firstDay; i++) {
       days.push(<div className="empty-day" key={`empty-${i}`}></div>);
     }
-
+  
     // Add numbered days for the month
     for (let i = 1; i <= totalDays; i++) {
       const currentDate = new Date(date.getFullYear(), date.getMonth(), i);
+      const isBeforeToday = currentDate < new Date();
+      console.log("date", currentDate)
+      console.log("is before today: ", isBeforeToday)
       const bookedDate = dates.find(d => new Date(d.date).getTime() === currentDate.getTime());
       const isBooked = bookedDate ? bookedDate.booked : false;
       const price = bookedDate ? bookedDate.price : defaultPrice;
-
+  
       days.push(
         <div
-          className={`bg-white border border-zinc-400 cursor-pointer flex flex-col items-center gap-2 py-4 calendar-day ${isBooked ? 'bg-zinc-200' : ''}`}
+          className={`bg-white border border-zinc-400 cursor-pointer flex flex-col items-center gap-2 py-4 calendar-day ${isBooked || isBeforeToday  ? 'bg-zinc-200' : ''}`}
           key={`day-${i}`}
         >
-          <p className={isBooked ? 'line-through font-semibold' : 'font-semibold'}>{i}</p>
-          <p className={`w-fit h-fit text-xs md:text-sm ${isBooked?'line-through':''}`}>${price}</p>
+          <p className={isBooked || isBeforeToday ? 'line-through font-semibold' : 'font-semibold'}>{i}</p>
+          <p className={`w-fit h-fit text-xs md:text-sm ${isBooked ? 'line-through' : ''}`}>${price}</p>
         </div>
       );
     }
     return days;
   };
+  
 
   
 

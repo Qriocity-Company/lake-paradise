@@ -24,7 +24,7 @@ export const Navbar = () => {
       <div className="hidden md:flex gap-16 text-black font-Sg justify-between items-center font-arhivo">
         
         <a href="#about">About Us</a>
-        <a href="#amneties">Amneties</a>
+        <a href="#amneties">Amenities</a>
         <a href="#book" className="">Contact</a>
         <a href="#book" className="bg-[#2637D3] rounded-xl px-6 py-2 text-white hover:bg-[#212fb2] cursor-pointer">Book Now</a>
       </div>

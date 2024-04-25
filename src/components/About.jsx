@@ -20,7 +20,7 @@ const About = () => {
                 <img src={data.hotel?.aboutImage} alt="Front View of Lake House" className='h-full w-full rounded-3xl object-contain'/>
             </div>
             <div className='mt-8 md:mt-0 md:w-[40%] w-full md:order-1 order-2 font-archivo'>
-                <h1 className=' md:text-[50px] lg:text-[80px] font-bold font-bartleen'>Welcome</h1>
+                <h1 className='text-[50px] md:text-[50px] lg:text-[80px] font-bold font-bartleen'>Welcome</h1>
                 {content.map((para,index)=>{
                     return (
                     <p key={index} className='font-archivo mt-3 md:mt-5 text-black text-[14px] lg:text-[18px]'>

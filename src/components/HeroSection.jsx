@@ -4,12 +4,12 @@ import useFetch from "../hooks/useFetch"
 const HeroSection = () => {
     const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
   return (
-    <div className='w-full h-[70vh] md:h-[90vh] lg:h-[90vh] flex flex-col items-center my-6 md:my-12'>
+    <div className='w-full h-[500px] md:h-[650px] lg:h-[650px] flex flex-col items-center my-6 md:my-12'>
         <div className='w-[95%] md:w-[90%] h-[100%] md:h-90% relative'>
-            <img src={data.hotel?.heroImage} alt="" className='h-[70vh] md:h-full w-full rounded-lg'/>
+            <img src={data.hotel?.heroImage} alt="" className='h-[500px] md:h-full w-full rounded-lg'/>
 
             <div className='flex flex-col gap-4 md:gap-6 lg:gap-6 text-white absolute top-[10%] md:top-12 lg:top-[8%] left-[5%] w-[70%] lg:w-[50%] '>
-                <h1 className='font-bartleen text-[70px]   md:text-[110px]  leading-[80px] md:leading-[158px]'>
+                <h1 className='font-bartleen text-[70px]   md:text-[110px]  leading-[90px] md:leading-[158px]'>
                     The Lake Paradise
                 </h1> 
                 <p className='text-[16px] md:text-[24px] font-arhivo'>

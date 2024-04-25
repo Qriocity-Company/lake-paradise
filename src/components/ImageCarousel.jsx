@@ -35,24 +35,6 @@ function ImageCarousel() {
     setNav2(sliderRef2);
   }, [imageData]);
 
-//   const imageData = [
-//     {
-//         title:"Main Back Patio",
-//         img:"http://res.cloudinary.com/dh6zjine0/image/upload/v1713787225/upload/bomrlgyoodwdrgleapye.png"
-//     },
-//     {
-//         title:"Front Patio",
-//         img:"http://res.cloudinary.com/dh6zjine0/image/upload/v1713787224/upload/ywjv37ikqij7era7ujyo.png"
-//     },
-//     {
-//         title:"Master Bedroom",
-//         img:"http://res.cloudinary.com/dh6zjine0/image/upload/v1713787224/upload/setxnjtkw5lhq745inwf.png"
-//     },
-//     {
-//         title:"Outdoor Dining",
-//         img:"http://res.cloudinary.com/dh6zjine0/image/upload/v1713787224/upload/dptvhsr4xjxqqx1nue4t.png"
-//     }
-//   ]
 
     if(loading){
         return(

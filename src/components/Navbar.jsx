@@ -14,7 +14,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className=" fixed top-0 bg-white w-[100vw] flex justify-between items-center px-4 md:px-[48px] py-8   md:text-[18px] z-20">
+    <div className=" fixed top-0 bg-white w-[100vw] flex justify-between items-center px-4 md:px-[48px] py-4 md:py-8   md:text-[18px] z-20">
       <a href="/" className="relative font-barlow">
         <img src={logo} alt="logo" className="w-[100%]" width={100} />
         <div className="absolute flex items-center gap-1 w-[150px] top-[45%] -translate-y-1/2 left-[40%] ">

@@ -15,7 +15,7 @@ const HeroSection = () => {
                 <p className='text-[16px] md:text-[24px] font-arhivo'>
                     Escape to Tranquil Waters at Our Lakefront Paradise on Lake Wedowee
                 </p>
-                <a href="" className="bg-[#2637D3] rounded-xl px-6 md:px-12 py-2 md:py-4 text-white hover:bg-[#212fb2] cursor-pointer w-fit text-[14px] md:text-[24px]">Book Now</a>
+                <a href="#book" className="bg-[#2637D3] rounded-xl px-6 md:px-12 py-2 md:py-4 text-white hover:bg-[#212fb2] cursor-pointer w-fit text-[14px] md:text-[24px]">Book Now</a>
             </div>
         </div>
     </div>

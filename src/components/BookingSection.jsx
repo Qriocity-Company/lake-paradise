@@ -18,7 +18,8 @@ const BookingSection = () => {
     adults: '1',
     children: '0',
     message: '',
-    email:''
+    email:'',
+    name:''
   });
 
   const handleChange = (e) => {
@@ -55,14 +56,15 @@ const BookingSection = () => {
       adults: '1',
       children: '0',
       message: '',
-      email:''
+      email:'',
+      name:''
     });
 
   };
 
   return (
     <div id='book' className='w-full flex flex-col items-center mb-8 md:mb-12'>
-      <div className='w-[95%] md:w-[90%] flex flex-col bg-[#E9F3F6] rounded-3xl  p-4 md:p-8 shadow-md'>
+      <div className='w-[100%] md:w-[100%] flex flex-col bg-[#E9F3F6] p-4 md:p-8 '>
 
         <div className='flex flex-col font-archivo text-center'>
           <h1 className='leading-[38px] md:leading-normal text-[30px] md:text-[42px] font-bold'>Book the Paradise</h1>
@@ -102,6 +104,19 @@ const BookingSection = () => {
                   required
                 />
               </div>
+              <div className='w-full flex flex-col gap-2'>
+                <label htmlFor="name" className='w-full font-semibold text-lg'>Your Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder='e.g. John Doe'
+                  value={formData.name}
+                  onChange={handleChange}
+                  className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
+                  required
+                />
+              </div>
 
               <div className='w-full flex flex-col gap-2'>
                 <label htmlFor="checkoutDate" className='w-full font-semibold text-lg'>Your Email *</label>
@@ -117,9 +132,16 @@ const BookingSection = () => {
                 />
               </div>
 
-              <div className='w-full flex flex-col gap-2'>
-                <label htmlFor="phoneNumber" className='w-full font-semibold text-lg'>Phone Number *</label>
-                <input
+              
+              
+
+            </div>
+          </div>
+
+          <div className='flex flex-col md:grid grid-cols-3 gap-4 mt-4 md:mt-8'>
+            <div className='w-full flex flex-col gap-2'>
+              <label htmlFor="phoneNumber" className='w-full font-semibold text-lg'>Phone Number *</label>
+              <input
                   type="text"
                   id="phoneNumber"
                   name="phoneNumber"
@@ -129,13 +151,51 @@ const BookingSection = () => {
                   className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
                   required
                 />
-              </div>
-              
-
             </div>
-          </div>
 
-          <div className='flex flex-col md:grid grid-cols-3 gap-4 mt-4 md:mt-8'>
+            
+            <div className='w-full flex flex-col gap-2'>
+                <label htmlFor="adults"  className='w-full font-semibold text-lg'>Adults</label>
+                <div className='mt-1 mb-3 w-full flex items-center gap-2 bg-white rounded-xl px-3 h-full'>
+                  <img src={person} alt="" className='h-5 w-5'/>
+                  <select
+                    id="adults"
+                    name="adults"
+                    value={formData.adults}
+                    onChange={handleChange}
+                    className='bg-white p-2 rounded-xl  w-full font-semibold text-lg py-4'
+                    required
+                  >
+                    {[...Array(7)].map((_, index) => (
+                      <option key={index + 1} value={index + 1}>{index + 1}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+            
+
+            <div className='flex flex-col gap-1 md:gap-2'>
+
+              <label htmlFor="Person" className='w-full font-semibold text-lg'>Children</label>
+              <div className='mt-1 mb-3 w-full flex items-center gap-2 bg-white rounded-xl px-3 h-full'>
+                <img src={child} alt="" className='h-5 w-5'/>
+                <select
+                  id="children"
+                  name="children"
+                  value={formData.children}
+                  onChange={handleChange}
+                  className=' bg-white p-2 rounded-xl  w-full font-semibold text-lg py-4'
+                  required
+                >
+                  {[...Array(7)].map((_, index) => (
+                    <option key={index + 1} value={index + 1}>{index + 1}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            
+            
             <div className='flex flex-col gap-2'>
               <label htmlFor="country" className='w-full font-semibold text-lg'>Promo Code (if any)</label>
               <input
@@ -149,58 +209,15 @@ const BookingSection = () => {
               />
                
             </div>
-            <div className='w-full flex flex-col gap-2'>
-                <label htmlFor="adults"  className='w-full font-semibold text-lg'>Adults</label>
-                <select
-                  id="adults"
-                  name="adults"
-                  value={formData.adults}
-                  onChange={handleChange}
-                  className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
-                  required
-                >
-                  {[...Array(7)].map((_, index) => (
-                    <option key={index + 1} value={index + 1}>{index + 1}</option>
-                  ))}
-                </select>
-              </div>
 
-            
-
-            <div className='flex flex-col gap-1 md:gap-2'>
-
-              <label htmlFor="Person" className='w-full font-semibold text-lg'>Children</label>
-
-              
-
-               
-    
-    
-                    <select
-                      id="children"
-                      name="children"
-                      value={formData.children}
-                      onChange={handleChange}
-                      className=' bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
-                      required
-                    >
-                      {[...Array(7)].map((_, index) => (
-                        <option key={index + 1} value={index + 1}>{index + 1}</option>
-                      ))}
-                    </select>
-                  
-
-            </div>
-            
-
-            <div className='col-span-2 flex flex-col gap-2'>
+            <div className='col-span-1 flex flex-col gap-2'>
               <label htmlFor="message" className='w-full font-semibold text-lg'>Message</label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="4"
+                rows="1"
                 className='bg-white p-2 py-4 rounded-xl mt-1 mb-3 w-full font-semibold text-lg'
               ></textarea>
             </div>

@@ -18,8 +18,8 @@ function ImageCarousel() {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 500,
-        autoplaySpeed: 2000,
+        speed: 400,
+        autoplaySpeed: 3000,
         cssEase: "linear",
         prevArrow:<ArrowLeftCircle className=""/>,
         nextArrow:<ArrowRightCircle className=""/>
@@ -55,7 +55,7 @@ function ImageCarousel() {
                 
                 return(
                 <div key={index} className="h-full w-full z-50 p-1">
-                    <img src={item.img} alt="" className="w-full h-[60vh] md:-[50vh] lg:h-[60vh] object-cover"/>
+                    <img src={item.img} alt="" className="w-full h-[60vh] md:-[50vh] lg:h-[70vh] object-cover"/>
                     <div className=" bg-[#2637D3] text-white text-lg font-semibold py-2 px-6 w-full">
                     {item.title}
                     </div>

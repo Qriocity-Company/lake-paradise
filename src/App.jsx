@@ -12,6 +12,7 @@ import BottomBanner from './components/BottomBanner'
 import Features from './components/Features'
 import BookingSection from './components/BookingSection'
 import ImageCarousel from './components/ImageCarousel'
+import BottomText from './components/BottomText'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,9 @@ function App() {
       <Location/>
       <BottomBanner/>
       <Features/>
+
+      <BottomText/>
+
       <Footer/>
     </div>
   )

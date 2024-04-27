@@ -10,7 +10,10 @@ export default {
         barlow:["Barlow Condensed","sans-serif"],
         arhivo:["Archivo","sans-serif"],
         bartleen:["bartleen","sans-serif"],
-      }
+      },
+      screens: {
+        mac: "945px", // Add custom breakpoint
+      },
     },
   },
   plugins: [],

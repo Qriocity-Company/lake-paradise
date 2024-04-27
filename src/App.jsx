@@ -18,7 +18,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='w-full flex flex-col justify-center items-center'>
+    <div className='relative w-full flex flex-col justify-center items-center'>
       <Navbar/>
       <TopBanner/>
       <HeroSection/>
@@ -27,10 +27,10 @@ function App() {
       {/* <RoomImages/> */}
       <ImageCarousel/>
       <BookingSection/>
-      <Location/>
       <BottomBanner/>
       <Features/>
 
+      <Location/>
       <BottomText/>
 
       <Footer/>

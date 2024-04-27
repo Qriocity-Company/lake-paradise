@@ -44,8 +44,7 @@ const CalendarUI = () => {
     for (let i = 1; i <= totalDays; i++) {
       const currentDate = new Date(date.getFullYear(), date.getMonth(), i);
       const isBeforeToday = currentDate < new Date();
-      console.log("date", currentDate)
-      console.log("is before today: ", isBeforeToday)
+      
       const bookedDate = dates.find(d => new Date(d.date).getTime() === currentDate.getTime());
       const isBooked = bookedDate ? bookedDate.booked : false;
       const price = bookedDate ? bookedDate.price : defaultPrice;

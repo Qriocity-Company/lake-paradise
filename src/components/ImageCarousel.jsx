@@ -47,7 +47,7 @@ function ImageCarousel() {
         )
     }
   return (
-    <div className="slider-container flex flex-col justify-center items-center z-10 w-[95vw] md:w-[80vw] lg:w-[70vw] px-4 md:p-8 mb-10">
+    <div id='photos' className="slider-container flex flex-col justify-center items-center z-10 w-[95vw] md:w-[80vw] lg:w-[70vw] px-4 md:p-8 mb-10">
         
         <Slider  {...settings} asNavFor={nav2} ref={slider => (sliderRef1 = slider)}  className="h-full w-full flex justify-center items-center">
         {
@@ -70,7 +70,7 @@ function ImageCarousel() {
             slidesToShow={4}
             swipeToSlide={true}
             focusOnSelect={true}
-            className="w-full z-20 flex justify-center items-center"
+            className="w-[80%] z-20 flex justify-center items-center"
             nextArrow={<></>}
             prevArrow={<></>}
         >
@@ -79,7 +79,7 @@ function ImageCarousel() {
                 
                 return(
                 <div key={index} className="h-full w-full z-50 p-1">
-                    <img src={item.img} alt="" className="w-full h-[30vh] md:-[20vh] lg:h-[30vh] object-cover"/>
+                    <img src={item.img} alt="" className="w-full h-[30vh] md:-[20vh] lg:h-[20vh] object-cover"/>
                 </div>
                 )
             })

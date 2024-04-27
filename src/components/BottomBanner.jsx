@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 const BottomBanner = () => {
     const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
   return (
-    <div className='bg-[#E9F3F6] md:py-8 py-6 w-full flex flex-col items-center'>
+    <div className='relative bg-[#E9F3F6] md:py-8 py-6 w-full flex flex-col items-center'>
         <div className='md:w-[90%] w-[95%] md:flex gap-4 lg:gap-12'>
             <div className='w-full md:w-[60%] flex flex-col justify-around font-archivo '>
                 <h2 className='text-[26px] md:text-[36px] lg:text-[42px] font-bold'>What this place offers</h2>

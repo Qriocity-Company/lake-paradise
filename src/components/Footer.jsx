@@ -10,6 +10,17 @@ import useFetch from '../hooks/useFetch'
 
 const Footer = () => {
     const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`)
+
+    const handleSmoothScroll = (targetId) => {
+        const target = document.getElementById(targetId);
+        if (target) {
+            window.scrollTo({
+            top: target.offsetTop - 100, // Adjust the scroll amount here
+            behavior: "smooth",
+            });
+        }
+        toggleMenu(); // Close the menu after clicking on a link
+    };
   return (
     <div className='w-full flex flex-col items-center bg-black text-white mt-8 md:mt-12 py-12 pb-24 md:py-16 md:pb-16'>
         <div className='relative w-[90%] grid md:grid-cols-3 grid-cols-1 gap-2 md:gap-4 lg:gap-12'>
@@ -17,15 +28,15 @@ const Footer = () => {
                 <a href="/" className="relative font-barlow">
                     <img src={logo} alt="logo" className="" />
                     <div className="absolute flex items-center gap-1 w-[150px] top-[45%] -translate-y-1/2 left-[6%] ">
-                    <span>The Lake </span><span className="font-bold">Paradise</span>
+                    <span>Lake </span><span className="font-bold">Paradise</span>
                     </div>
                 </a>
                 <p className='w-[70%] text-[16px]'>Escape to Tranquil Waters at Our Lakefront Paradise on Lake Wedowee</p>
             </div>
-            <div className='flex flex-col items-start md:items-center gap-4'>
-                <a href="">About Us</a>
-                <a href="">Amenities</a>
-                <a href="">Contact</a>
+            <div className='flex flex-col items-start md:items-center gap-4 cursor-pointer'>
+                <a  onClick={() => handleSmoothScroll("about")}>About Us</a>
+                <a  onClick={() => handleSmoothScroll("amenities")}>Amenities</a>
+                <a  onClick={() => handleSmoothScroll("book")}>Contact</a>
             </div>
             <div className='mt-4 md:mt-0 w-full flex  items-start md:justify-end'>
                 <div className='md:w-[60%] flex flex-col items-left gap-4'>

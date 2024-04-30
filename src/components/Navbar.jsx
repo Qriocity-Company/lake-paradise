@@ -30,10 +30,10 @@ export const Navbar = () => {
       <a href="/" className="relative font-barlow">
         <img src={logo} alt="logo" className="w-[100%]" width={100} />
         <div className="absolute flex items-center gap-1 w-[150px] top-[45%] -translate-y-1/2 left-[40%] ">
-          <span>The Lake </span><span className="font-bold">Paradise</span>
+          <span>Lake </span><span className="font-bold">Paradise</span>
         </div>
       </a>
-      <div className="hidden mac:flex gap-16 text-black font-Sg justify-between items-center font-arhivo">
+      <div className="hidden z-50 mac:flex gap-16 text-black font-Sg justify-between items-center font-arhivo">
         
         <a className="cursor-pointer" onClick={() => handleSmoothScroll("about")}>About Us</a>
         <a className="cursor-pointer" onClick={() => handleSmoothScroll("amenities")}>Amenities</a>
@@ -62,6 +62,7 @@ export const Navbar = () => {
           <a className="cursor-pointer" onClick={() => handleSmoothScroll("home")}>Home</a>
           <a className="cursor-pointer" onClick={() => handleSmoothScroll("about")}>About Us</a>
           <a className="cursor-pointer" onClick={() => handleSmoothScroll("amenities")}>Amenities</a>
+          <a className="cursor-pointer" onClick={() => handleSmoothScroll("photos")}>Photos</a>
           <a className="cursor-pointer" onClick={() => handleSmoothScroll("book")}>Contact</a>
           <a className="cursor-pointer" onClick={() => handleSmoothScroll("book")}>
             Book Now

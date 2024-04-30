@@ -4,7 +4,7 @@ import useFetch from "../hooks/useFetch"
 const HeroSection = () => {
     const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
   return (
-    <div className='w-full h-[500px] md:h-[650px] lg:h-[650px] flex flex-col items-center my-6 md:my-12'>
+    <div id='home' className='w-full h-[500px] md:h-[650px] lg:h-[650px] flex flex-col items-center my-6 md:my-12'>
         <div className='w-[95%] md:w-[90%] h-[100%] md:h-90% relative'>
             <img src={data.hotel?.heroImage} alt="" className='h-[500px] md:h-full w-full rounded-lg'/>
 

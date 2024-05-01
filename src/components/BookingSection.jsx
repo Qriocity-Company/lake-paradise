@@ -34,9 +34,13 @@ const BookingSection = () => {
     const today = new Date();
     const checkinDate = new Date(formData.checkinDate);
     const checkoutDate = new Date(formData.checkoutDate);
-    const phoneNumberPattern = /^\d{10}$/;
-
-    if (!formData.checkinDate || !formData.checkoutDate) {
+    // const phoneNumberPattern = /^\d{10}$/;
+    if (formData.phoneNumber.length < 10)
+    {
+      alert('Please enter valid Phone number');
+      return;
+    }
+     if (!formData.checkinDate || !formData.checkoutDate) {
       alert('Please select check-in and check-out dates.');
       return;
     }
@@ -51,10 +55,10 @@ const BookingSection = () => {
       return;
     }
 
-    if (!phoneNumberPattern.test(formData.phoneNumber)) {
-      alert('Phone number should be a 10-digit number.');
-      return;
-    }
+    // if (!phoneNumberPattern.test(formData.phoneNumber)) {
+    //   alert('Phone number should be a 10-digit number.');
+    //   return;
+    // }
     console.log('Form submitted:', formData);
     
     const res = await fetch(`${host}/messages/send-message`,{

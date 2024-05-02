@@ -21,8 +21,6 @@ function App() {
   
   const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
 
-  console.log("data in app.jsx : ",data);
-
   if (loading) {
     return <div className='flex w-full min-h-[100vh] items-center justify-center'>
       <div className='flex w-full relative gap-4 items-center'>

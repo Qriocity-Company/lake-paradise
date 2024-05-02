@@ -5,13 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
 import useFetch from '../hooks/useFetch'
 
-function ImageCarousel() {
+function ImageCarousel({hotelImages}) {
 
-    const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
-
-
-    const imageData = data?.hotel?.hotelImages;
-    // console.log(imageData)
     const settings = {
         
         infinite: true,
@@ -33,25 +28,16 @@ function ImageCarousel() {
   useEffect(() => {
     setNav1(sliderRef1);
     setNav2(sliderRef2);
-  }, [imageData]);
+  }, [hotelImages]);
 
 
-    if(loading){
-        return(
-            <div>Loading . . .</div>
-        )
-    }
-    if(error){
-        return(
-            <div>Error : {error}</div>
-        )
-    }
+    
   return (
     <div id='photos' className="slider-container flex flex-col justify-center items-center z-10 w-[95vw] md:w-[80vw] lg:w-[70vw] px-4 md:p-8 mb-10">
         
         <Slider  {...settings} asNavFor={nav2} ref={slider => (sliderRef1 = slider)}  className="h-full w-full flex justify-center items-center">
         {
-            imageData.map((item,index)=>{
+            hotelImages.map((item,index)=>{
                 
                 return(
                 <div key={index} className="h-full w-full z-50 p-1">
@@ -75,7 +61,7 @@ function ImageCarousel() {
             prevArrow={<></>}
         >
         {
-            imageData.map((item,index)=>{
+            hotelImages.map((item,index)=>{
                 
                 return(
                 <div key={index} className="h-full w-full z-50 p-1">

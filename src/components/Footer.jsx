@@ -8,8 +8,8 @@ import insta from '../assets/insta.svg'
 import twitter from '../assets/twitter.svg'
 import useFetch from '../hooks/useFetch'
 
-const Footer = () => {
-    const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`)
+const Footer = ({contacts}) => {
+    
 
     const handleSmoothScroll = (targetId) => {
         const target = document.getElementById(targetId);
@@ -42,11 +42,11 @@ const Footer = () => {
                 <div className='md:w-[60%] flex flex-col items-left gap-4'>
                     <div className='flex items-center gap-1 md:gap-3'>
                         <img src={phone} alt="" />
-                        <p className="text-[16px] md:text-[10px] lg:text-[14px]">{data.hotel?.contacts[0]}</p>
+                        <p className="text-[16px] md:text-[10px] lg:text-[14px]">{contacts[0]}</p>
                     </div>
                     <div className='flex items-center gap-1 md:gap-3'>
                         <img src={email} alt="" />
-                        <p className="text-[16px] md:text-[10px] lg:text-[14px]">{data.hotel?.contacts[1]}</p>
+                        <p className="text-[16px] md:text-[10px] lg:text-[14px]">{contacts[1]}</p>
                     </div>
                     <div className='flex items-right items-center gap-4 mt-4 md:mt-16'>
                         <p className='text-[13px] text-[#B3B3B3]'>Follow Us</p>

@@ -1,8 +1,8 @@
 import React from 'react'
 import bannerImg from '../assets/Bottom_Banner.png'
 import useFetch from '../hooks/useFetch';
-const BottomBanner = () => {
-    const { data, loading, error } = useFetch(`https://lake-paradise-admin.onrender.com/hotel/get-hotel`);
+const BottomBanner = ({bottomBanner}) => {
+    
   return (
     <div className='relative bg-[#E9F3F6] md:py-8 py-6 w-full flex flex-col items-center'>
         <div className='md:w-[90%] w-[95%] md:flex gap-4 lg:gap-12'>
@@ -15,7 +15,7 @@ const BottomBanner = () => {
                 </div>
             </div>
             <div className='w-full md:w-[40%] mt-6 md:mt-0'>
-                <img loading='lazy' src={data.hotel?.bottomBanner} alt="" className='h-full w-full'/>
+                <img loading='lazy' src={bottomBanner} alt="" className='h-full w-full'/>
             </div>
         </div>
     </div>

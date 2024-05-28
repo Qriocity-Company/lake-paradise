@@ -45,7 +45,12 @@ const CalendarUI = () => {
       const currentDate = new Date(date.getFullYear(), date.getMonth(), i);
       const isBeforeToday = currentDate < new Date();
       
-      const bookedDate = dates.find(d => new Date(d.date).getTime() === currentDate.getTime());
+      const normalizedCurrentDate = new Date(currentDate.setHours(0, 0, 0, 0));
+      const bookedDate = dates.find(d => {
+        const normalizedBookedDate = new Date(new Date(d.date).setHours(0, 0, 0, 0));
+        return normalizedBookedDate.getTime() === normalizedCurrentDate.getTime();
+      });
+      
       const isBooked = bookedDate ? bookedDate.booked : false;
       const price = bookedDate ? bookedDate.price : defaultPrice;
   
@@ -85,9 +90,12 @@ const CalendarUI = () => {
     }
   };
 
+  useEffect(()=>{
+    fetchDefaultPrice();
+  },[])
+
   useEffect(() => {
     fetchDates();
-    fetchDefaultPrice();
   }, []);
 
 
